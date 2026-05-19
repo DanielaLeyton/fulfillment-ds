@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --storybook-build-dir=storybook-static --auto-accept-changes"
   },
   "dependencies": {
     "@fds/ui-web": "workspace:*",

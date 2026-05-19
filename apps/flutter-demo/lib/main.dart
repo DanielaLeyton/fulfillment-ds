@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:formbricks_flutter/formbricks_flutter.dart';
 import 'apps/warehouse_app.dart';
 import 'apps/delivery_app.dart';
 
 void main() {
-  runApp(const FdsDemoLauncher());
+  runApp(
+    FormbricksProvider(
+      client: FormbricksClient(
+        appUrl: 'https://app.formbricks.com',
+        environmentId: 'YOUR_FORMBRICKS_ENV_ID', // reemplazar con el ID de tu proyecto en app.formbricks.com
+      ),
+      child: const FdsDemoLauncher(),
+    ),
+  );
 }
 
 class FdsDemoLauncher extends StatefulWidget {

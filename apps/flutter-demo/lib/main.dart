@@ -8,7 +8,7 @@ void main() {
     FormbricksProvider(
       client: FormbricksClient(
         appUrl: 'https://app.formbricks.com',
-        environmentId: 'YOUR_FORMBRICKS_ENV_ID', // reemplazar con el ID de tu proyecto en app.formbricks.com
+        environmentId: 'cmpcvgl065sd6wo01fka92ucr', // reemplazar con el ID de tu proyecto en app.formbricks.com
       ),
       child: const FdsDemoLauncher(),
     ),

@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Preview, Decorator } from '@storybook/react';
 import { ThemeProvider } from '@fds/ui-web';
 

@@ -1,4 +1,4 @@
-import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from 'react';
+import React, { forwardRef, type ButtonHTMLAttributes, type ReactNode } from 'react';
 import { useTheme } from '../theme/ThemeContext';
 
 export type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'danger';

@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useRef, type ReactNode } from 'react';
+import React, { createContext, useContext, useEffect, useRef, type ReactNode } from 'react';
 import { BRAND_TOKENS, type BrandId, type BrandTokens } from './tokens';
 
 interface ThemeContextValue {

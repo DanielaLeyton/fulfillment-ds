@@ -1,4 +1,4 @@
-import { type HTMLAttributes, type ReactNode } from 'react';
+import React, { type HTMLAttributes, type ReactNode } from 'react';
 import { useTheme } from '../theme/ThemeContext';
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {

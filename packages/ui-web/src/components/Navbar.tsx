@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react';
+import React, { useState, type ReactNode } from 'react';
 import { useTheme } from '../theme/ThemeContext';
 
 interface NavItem {

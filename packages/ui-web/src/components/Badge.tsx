@@ -1,3 +1,4 @@
+import React from 'react';
 import { useTheme } from '../theme/ThemeContext';
 
 export type BadgeVariant = 'default' | 'primary' | 'success' | 'warning' | 'danger' | 'info';

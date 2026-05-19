@@ -24,10 +24,11 @@ const config: StorybookConfig = {
         t.type="text/javascript";t.async=!0;
         t.src=apiHost+"/js/formbricks.umd.cjs";
         t.onload=function(){
-          window.formbricks && window.formbricks.setup({
-            environmentId:"${process.env.VITE_FORMBRICKS_ENV_ID || ''}",
-            appUrl:apiHost
-          });
+          var fb=window.formbricks;
+          if(!fb) return;
+          var envId="${process.env.VITE_FORMBRICKS_ENV_ID || ''}";
+          if(fb.setup) fb.setup({environmentId:envId,appUrl:apiHost});
+          else if(fb.init) fb.init({environmentId:envId,apiHost:apiHost});
         };
         document.head.appendChild(t);
       }();

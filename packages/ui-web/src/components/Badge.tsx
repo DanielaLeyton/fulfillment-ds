@@ -17,9 +17,9 @@ export function Badge({ variant = 'default', size = 'md', dot = false, children 
   const VARIANT_COLORS: Record<BadgeVariant, { bg: string; text: string; dot: string }> = {
     default: { bg: tokens.colorSurfaceEmphasis,     text: tokens.colorTextSecondary,   dot: tokens.colorTextTertiary },
     primary: { bg: tokens.colorBrandPrimarySubtle,  text: tokens.colorBrandPrimary,    dot: tokens.colorBrandPrimary },
-    success: { bg: '#e8f9ef',                       text: '#1aab55',                   dot: '#1aab55' },
-    warning: { bg: '#fff8e1',                       text: '#b45309',                   dot: '#f59e0b' },
-    danger:  { bg: '#fff0f0',                       text: '#ad1f1f',                   dot: '#e53535' },
+    success: { bg: '#E8F6EE',                       text: '#036843',                   dot: '#047E48' },
+    warning: { bg: '#FDFBDE',                       text: '#A38730',                   dot: '#FBBF24' },
+    danger:  { bg: '#FFF2F2',                       text: '#8C1D18',                   dot: '#D72A22' },
     info:    { bg: tokens.colorBrandPrimarySubtle,  text: tokens.colorBrandPrimary,    dot: tokens.colorBrandPrimary },
   };
 

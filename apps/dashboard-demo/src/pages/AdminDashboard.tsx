@@ -150,7 +150,7 @@ function MainContent() {
               {kpi.label}
             </div>
             <div style={{ fontSize: '30px', fontWeight: 700, color: tokens.colorTextPrimary, lineHeight: 1 }}>{kpi.value}</div>
-            <div style={{ fontSize: '12px', marginTop: '8px', color: kpi.good === null ? tokens.colorTextTertiary : kpi.good ? '#1aab55' : '#e53535' }}>
+            <div style={{ fontSize: '12px', marginTop: '8px', color: kpi.good === null ? tokens.colorTextTertiary : kpi.good ? '#047E48' : '#D72A22' }}>
               {kpi.delta} vs last week
             </div>
           </Card>

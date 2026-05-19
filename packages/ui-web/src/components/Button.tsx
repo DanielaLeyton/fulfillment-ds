@@ -61,7 +61,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           };
         case 'danger':
           return {
-            background: isDisabled ? tokens.colorBorderDefault : '#e53535',
+            background: isDisabled ? tokens.colorBorderDefault : '#D72A22',
             color: isDisabled ? tokens.colorTextDisabled : '#ffffff',
             border: 'none',
           };

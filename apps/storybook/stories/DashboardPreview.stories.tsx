@@ -65,7 +65,7 @@ function DashboardContent() {
           <Card key={kpi.label}>
             <div style={{ fontSize: '12px', color: tokens.colorTextSecondary, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '8px' }}>{kpi.label}</div>
             <div style={{ fontSize: '28px', fontWeight: 700, color: tokens.colorTextPrimary }}>{kpi.value}</div>
-            <div style={{ fontSize: '12px', marginTop: '4px', color: kpi.good === null ? tokens.colorTextTertiary : kpi.good ? '#1aab55' : '#e53535' }}>
+            <div style={{ fontSize: '12px', marginTop: '4px', color: kpi.good === null ? tokens.colorTextTertiary : kpi.good ? '#047E48' : '#D72A22' }}>
               {kpi.delta} vs last week
             </div>
           </Card>

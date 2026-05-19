@@ -39,7 +39,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     const inputId = id ?? (label ? label.toLowerCase().replace(/\s+/g, '-') : undefined);
 
     const borderColor = hasError
-      ? '#e53535'
+      ? '#D72A22'
       : focused
         ? tokens.colorBorderFocus
         : tokens.colorBorderDefault;
@@ -120,7 +120,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           <span
             style={{
               fontSize: '12px',
-              color: hasError ? '#e53535' : tokens.colorTextTertiary,
+              color: hasError ? '#D72A22' : tokens.colorTextTertiary,
             }}
           >
             {errorText ?? helperText}

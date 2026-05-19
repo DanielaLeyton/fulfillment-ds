@@ -8,7 +8,8 @@
     "tokens:build": "turbo build --filter=@fds/tokens",
     "lint": "turbo lint",
     "type-check": "turbo type-check",
-    "clean": "turbo clean"
+    "clean": "turbo clean",
+    "chromatic": "npx chromatic --storybook-build-dir=apps/storybook/storybook-static --auto-accept-changes"
   },
   "devDependencies": {
     "turbo": "^2.0.0",

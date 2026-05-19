@@ -1,0 +1,54 @@
+{
+  "$schema": "https://design-tokens.org/schema.json",
+  "description": "Brand A — Warehouse Ops App. Bold, industrial, high-contrast. Navy + Electric Blue.",
+
+  "color": {
+    "brand": {
+      "primary":         { "$value": "#0a6eff", "$type": "color", "$description": "Electric blue — action, CTAs" },
+      "primary-hover":   { "$value": "#0056d4", "$type": "color" },
+      "primary-pressed": { "$value": "#0042a4", "$type": "color" },
+      "primary-subtle":  { "$value": "#e7f0ff", "$type": "color" },
+      "on-primary":      { "$value": "#ffffff", "$type": "color" },
+
+      "secondary":        { "$value": "#1a2540", "$type": "color", "$description": "Navy — sidebar, headers" },
+      "secondary-hover":  { "$value": "#101930", "$type": "color" },
+      "secondary-subtle": { "$value": "#e8ecf4", "$type": "color" },
+      "on-secondary":     { "$value": "#ffffff", "$type": "color" },
+
+      "accent":          { "$value": "#f59e0b", "$type": "color", "$description": "Amber — warnings, highlights" },
+      "accent-subtle":   { "$value": "#fff8e1", "$type": "color" },
+      "on-accent":       { "$value": "#1a2540", "$type": "color" }
+    },
+    "surface": {
+      "default":  { "$value": "#ffffff", "$type": "color" },
+      "sunken":   { "$value": "#f4f6fb", "$type": "color" },
+      "emphasis":  { "$value": "#e8ecf4", "$type": "color" }
+    },
+    "text": {
+      "primary":   { "$value": "#1a2540", "$type": "color" },
+      "secondary": { "$value": "#4a5568", "$type": "color" },
+      "link":      { "$value": "#0a6eff", "$type": "color" }
+    }
+  },
+
+  "font": {
+    "family": {
+      "sans": { "$value": "'Inter', system-ui, -apple-system, sans-serif", "$type": "fontFamily" }
+    }
+  },
+
+  "component": {
+    "button": {
+      "border-radius": { "$value": "6px", "$type": "dimension" }
+    },
+    "card": {
+      "border-radius": { "$value": "10px", "$type": "dimension" }
+    }
+  },
+
+  "brand-meta": {
+    "name":       { "$value": "Brand A — Warehouse Ops",   "$type": "other" },
+    "logo-text":  { "$value": "FDS Warehouse",             "$type": "other" },
+    "nav-style":  { "$value": "sidebar",                   "$type": "other" }
+  }
+}

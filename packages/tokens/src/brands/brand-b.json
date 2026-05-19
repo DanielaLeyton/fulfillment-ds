@@ -1,0 +1,54 @@
+{
+  "$schema": "https://design-tokens.org/schema.json",
+  "description": "Brand B — Last Mile Delivery App. Energetic, fast, warm. Coral + Deep Green.",
+
+  "color": {
+    "brand": {
+      "primary":         { "$value": "#e8471a", "$type": "color", "$description": "Coral red — delivery urgency, CTAs" },
+      "primary-hover":   { "$value": "#c73a12", "$type": "color" },
+      "primary-pressed": { "$value": "#a32f0e", "$type": "color" },
+      "primary-subtle":  { "$value": "#fef0ec", "$type": "color" },
+      "on-primary":      { "$value": "#ffffff", "$type": "color" },
+
+      "secondary":        { "$value": "#1a4a2e", "$type": "color", "$description": "Deep green — trust, sustainability" },
+      "secondary-hover":  { "$value": "#0f3020", "$type": "color" },
+      "secondary-subtle": { "$value": "#e8f4ec", "$type": "color" },
+      "on-secondary":     { "$value": "#ffffff", "$type": "color" },
+
+      "accent":          { "$value": "#fbbf24", "$type": "color", "$description": "Gold — premium, status indicators" },
+      "accent-subtle":   { "$value": "#fefce8", "$type": "color" },
+      "on-accent":       { "$value": "#1a2540", "$type": "color" }
+    },
+    "surface": {
+      "default":  { "$value": "#ffffff", "$type": "color" },
+      "sunken":   { "$value": "#fafbf8", "$type": "color" },
+      "emphasis":  { "$value": "#eef4f0", "$type": "color" }
+    },
+    "text": {
+      "primary":   { "$value": "#1c1c1e", "$type": "color" },
+      "secondary": { "$value": "#52525b", "$type": "color" },
+      "link":      { "$value": "#e8471a", "$type": "color" }
+    }
+  },
+
+  "font": {
+    "family": {
+      "sans": { "$value": "'DM Sans', system-ui, -apple-system, sans-serif", "$type": "fontFamily" }
+    }
+  },
+
+  "component": {
+    "button": {
+      "border-radius": { "$value": "24px", "$type": "dimension", "$description": "Pill-shaped CTAs for mobile-first feel" }
+    },
+    "card": {
+      "border-radius": { "$value": "16px", "$type": "dimension" }
+    }
+  },
+
+  "brand-meta": {
+    "name":       { "$value": "Brand B — Last Mile",   "$type": "other" },
+    "logo-text":  { "$value": "FDS Delivery",          "$type": "other" },
+    "nav-style":  { "$value": "topbar",                "$type": "other" }
+  }
+}

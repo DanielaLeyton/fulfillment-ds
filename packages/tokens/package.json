@@ -1,0 +1,21 @@
+{
+  "name": "@fds/tokens",
+  "version": "1.0.0",
+  "description": "Design tokens for Fulfillment Design System — W3C DTCG format, transformed by Style Dictionary",
+  "scripts": {
+    "build": "node style-dictionary.config.mjs",
+    "watch": "node style-dictionary.config.mjs --watch"
+  },
+  "files": ["dist"],
+  "exports": {
+    "./brand-a/css": "./dist/brand-a/variables.css",
+    "./brand-a/js": "./dist/brand-a/tokens.js",
+    "./brand-b/css": "./dist/brand-b/variables.css",
+    "./brand-b/js": "./dist/brand-b/tokens.js",
+    "./flutter/brand-a": "./dist/flutter/brand_a_tokens.dart",
+    "./flutter/brand-b": "./dist/flutter/brand_b_tokens.dart"
+  },
+  "devDependencies": {
+    "style-dictionary": "^4.1.0"
+  }
+}

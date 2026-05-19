@@ -1,0 +1,22 @@
+{
+  "name": "fulfillment-ds",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "storybook": "turbo storybook",
+    "tokens:build": "turbo build --filter=@fds/tokens",
+    "lint": "turbo lint",
+    "type-check": "turbo type-check",
+    "clean": "turbo clean"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.0",
+    "typescript": "^5.4.0",
+    "prettier": "^3.3.0"
+  },
+  "packageManager": "pnpm@9.1.0",
+  "engines": {
+    "node": ">=20"
+  }
+}

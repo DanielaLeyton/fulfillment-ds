@@ -19,9 +19,13 @@ const config: StorybookConfig = {
     config.resolve ??= {};
     config.resolve.alias = {
       ...config.resolve.alias,
-      // Resolve @fds/ui-web from source so no build step is needed
       '@fds/ui-web': resolve(__dirname, '../../../packages/ui-web/src/index.ts'),
     };
+    // In pnpm workspaces, packages may live in the root node_modules — include it explicitly
+    config.resolve.modules = [
+      'node_modules',
+      resolve(__dirname, '../../../node_modules'),
+    ];
     return config;
   },
 };

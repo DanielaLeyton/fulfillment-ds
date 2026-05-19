@@ -1,12 +1,6 @@
 import React from 'react';
 import type { Preview, Decorator } from '@storybook/react';
 import { ThemeProvider } from '@fds/ui-web';
-import formbricks from '@formbricks/js';
-
-formbricks.setup({
-  environmentId: import.meta.env.VITE_FORMBRICKS_ENV_ID,
-  appUrl: 'https://app.formbricks.com',
-});
 
 const withTheme: Decorator = (Story, context) => {
   const brand = context.globals['brand'] ?? 'brand-a';

@@ -15,17 +15,30 @@ const config: StorybookConfig = {
     options: {},
   },
   docs: { autodocs: 'tag' },
+  previewHead: (head) => `
+    ${head}
+    <script>
+      !function(){
+        var apiHost="https://app.formbricks.com";
+        var t=document.createElement("script");
+        t.type="text/javascript";t.async=!0;
+        t.src=apiHost+"/js/formbricks.umd.cjs";
+        t.onload=function(){
+          window.formbricks && window.formbricks.setup({
+            environmentId:"${process.env.VITE_FORMBRICKS_ENV_ID || ''}",
+            appUrl:apiHost
+          });
+        };
+        document.head.appendChild(t);
+      }();
+    </script>
+  `,
   viteFinal: (config) => {
     config.resolve ??= {};
     config.resolve.alias = {
       ...config.resolve.alias,
       '@fds/ui-web': resolve(__dirname, '../../../packages/ui-web/src/index.ts'),
     };
-    // In pnpm workspaces, packages may live in the root node_modules — include it explicitly
-    config.resolve.modules = [
-      'node_modules',
-      resolve(__dirname, '../../../node_modules'),
-    ];
     return config;
   },
 };

@@ -43,7 +43,7 @@ export interface BrandTokens {
 }
 
 export const brandATokens: BrandTokens = {
-  // Brand A primary: Information-500 from new palette
+  // Brand A primary: Information palette — Open Sans
   colorBrandPrimary: '#0275EF',
   colorBrandPrimaryHover: '#0255CE',
   colorBrandPrimaryPressed: '#013BAC',
@@ -69,41 +69,40 @@ export const brandATokens: BrandTokens = {
   colorBorderFocus: '#0275EF',
   buttonBorderRadius: '6px',
   cardBorderRadius: '10px',
-  fontFamilySans: "'Inter', system-ui, -apple-system, sans-serif",
+  fontFamilySans: "'Open Sans', system-ui, -apple-system, sans-serif",
   brandName: 'Brand A — Warehouse Ops',
   brandLogoText: 'FDS Warehouse',
   brandNavStyle: 'sidebar',
 };
 
 export const brandBTokens: BrandTokens = {
-  // Brand B primary: Error/coral palette for delivery urgency feel
-  colorBrandPrimary: '#D72A22',
-  colorBrandPrimaryHover: '#B3261E',
-  colorBrandPrimaryPressed: '#8C1D18',
-  colorBrandPrimarySubtle: '#FFF2F2',
+  // Brand B primary: Primary green palette — Plus Jakarta Sans
+  colorBrandPrimary: '#0A8920',
+  colorBrandPrimaryHover: '#07751B',
+  colorBrandPrimaryPressed: '#046017',
+  colorBrandPrimarySubtle: '#E5F8E3',
   colorBrandOnPrimary: '#ffffff',
-  // Brand B secondary: Success/green palette — trust, sustainability
-  colorBrandSecondary: '#047E48',
-  colorBrandSecondaryHover: '#036843',
-  colorBrandSecondarySubtle: '#E8F6EE',
+  colorBrandSecondary: '#2D3A41',
+  colorBrandSecondaryHover: '#232D34',
+  colorBrandSecondarySubtle: '#E7EBEA',
   colorBrandOnSecondary: '#ffffff',
-  colorBrandAccent: '#FBBF24',
-  colorBrandAccentSubtle: '#FDFBDE',
-  colorBrandOnAccent: '#232D34',
+  colorBrandAccent: '#39AD3E',
+  colorBrandAccentSubtle: '#E5F8E3',
+  colorBrandOnAccent: '#ffffff',
   colorSurfaceDefault: '#ffffff',
   colorSurfaceSunken: '#F9FBFC',
-  colorSurfaceEmphasis: '#E8F6EE',
+  colorSurfaceEmphasis: '#E5F8E3',
   colorTextPrimary: '#192126',
   colorTextSecondary: '#37474F',
   colorTextTertiary: '#63767A',
   colorTextDisabled: '#90A3A3',
-  colorTextLink: '#D72A22',
+  colorTextLink: '#0A8920',
   colorBorderDefault: '#E7EBEA',
   colorBorderStrong: '#BECBC9',
-  colorBorderFocus: '#D72A22',
-  buttonBorderRadius: '24px',
-  cardBorderRadius: '16px',
-  fontFamilySans: "'DM Sans', system-ui, -apple-system, sans-serif",
+  colorBorderFocus: '#0A8920',
+  buttonBorderRadius: '6px',
+  cardBorderRadius: '10px',
+  fontFamilySans: "'Plus Jakarta Sans', system-ui, -apple-system, sans-serif",
   brandName: 'Brand B — Last Mile',
   brandLogoText: 'FDS Delivery',
   brandNavStyle: 'topbar',

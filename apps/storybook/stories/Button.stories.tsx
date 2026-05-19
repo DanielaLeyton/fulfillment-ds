@@ -17,7 +17,7 @@ const meta = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['primary', 'secondary', 'ghost', 'danger'],
+      options: ['primary', 'secondary', 'ghost', 'danger', 'especial'],
     },
     size: { control: 'select', options: ['sm', 'md', 'lg'] },
     loading: { control: 'boolean' },
@@ -34,6 +34,14 @@ export const Primary: Story = { args: { variant: 'primary' } };
 export const Secondary: Story = { args: { variant: 'secondary' } };
 export const Ghost: Story = { args: { variant: 'ghost' } };
 export const Danger: Story = { args: { variant: 'danger' } };
+export const Especial: Story = {
+  args: { variant: 'especial' },
+  parameters: {
+    docs: {
+      description: { story: 'Fondo oscuro #333333. Se usa en tooltips y snackbars.' },
+    },
+  },
+};
 
 export const Sizes: Story = {
   render: (args) => (
@@ -56,12 +64,12 @@ export const AllVariants: Story = {
         Switch Brand in the toolbar — all button shapes and colors update instantly from tokens.
       </p>
       <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-        {(['primary', 'secondary', 'ghost', 'danger'] as const).map((v) => (
+        {(['primary', 'secondary', 'ghost', 'danger', 'especial'] as const).map((v) => (
           <Button key={v} {...args} variant={v}>{v.charAt(0).toUpperCase() + v.slice(1)}</Button>
         ))}
       </div>
       <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-        {(['primary', 'secondary', 'ghost'] as const).map((v) => (
+        {(['primary', 'secondary', 'ghost', 'especial'] as const).map((v) => (
           <Button key={v} {...args} variant={v} loading>Loading…</Button>
         ))}
       </div>

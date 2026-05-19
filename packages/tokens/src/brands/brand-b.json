@@ -1,48 +1,50 @@
 {
   "$schema": "https://design-tokens.org/schema.json",
-  "description": "Brand B — Last Mile Delivery App. Energetic, fast, warm. Coral + Deep Green.",
+  "description": "Brand B — Last Mile Delivery. Natural, trustworthy, fresh. Primary green palette + Plus Jakarta Sans.",
 
   "color": {
     "brand": {
-      "primary":         { "$value": "#e8471a", "$type": "color", "$description": "Coral red — delivery urgency, CTAs" },
-      "primary-hover":   { "$value": "#c73a12", "$type": "color" },
-      "primary-pressed": { "$value": "#a32f0e", "$type": "color" },
-      "primary-subtle":  { "$value": "#fef0ec", "$type": "color" },
+      "primary":         { "$value": "#0A8920", "$type": "color", "$description": "Primary-500 — main CTA, filled buttons" },
+      "primary-hover":   { "$value": "#07751B", "$type": "color", "$description": "Primary-600" },
+      "primary-pressed": { "$value": "#046017", "$type": "color", "$description": "Primary-700" },
+      "primary-subtle":  { "$value": "#E5F8E3", "$type": "color", "$description": "Primary-100" },
       "on-primary":      { "$value": "#ffffff", "$type": "color" },
 
-      "secondary":        { "$value": "#1a4a2e", "$type": "color", "$description": "Deep green — trust, sustainability" },
-      "secondary-hover":  { "$value": "#0f3020", "$type": "color" },
-      "secondary-subtle": { "$value": "#e8f4ec", "$type": "color" },
+      "secondary":        { "$value": "#2D3A41", "$type": "color", "$description": "Neutral-700 — especial buttons, nav" },
+      "secondary-hover":  { "$value": "#232D34", "$type": "color", "$description": "Neutral-800" },
+      "secondary-subtle": { "$value": "#E7EBEA", "$type": "color", "$description": "Neutral-200" },
       "on-secondary":     { "$value": "#ffffff", "$type": "color" },
 
-      "accent":          { "$value": "#fbbf24", "$type": "color", "$description": "Gold — premium, status indicators" },
-      "accent-subtle":   { "$value": "#fefce8", "$type": "color" },
-      "on-accent":       { "$value": "#1a2540", "$type": "color" }
+      "accent":          { "$value": "#39AD3E", "$type": "color", "$description": "Primary-400 — highlights, badges" },
+      "accent-subtle":   { "$value": "#E5F8E3", "$type": "color" },
+      "on-accent":       { "$value": "#ffffff", "$type": "color" }
     },
     "surface": {
-      "default":  { "$value": "#ffffff", "$type": "color" },
-      "sunken":   { "$value": "#fafbf8", "$type": "color" },
-      "emphasis":  { "$value": "#eef4f0", "$type": "color" }
+      "default":  { "$value": "#ffffff",  "$type": "color" },
+      "sunken":   { "$value": "#F9FBFC",  "$type": "color" },
+      "emphasis": { "$value": "#E5F8E3",  "$type": "color" }
     },
     "text": {
-      "primary":   { "$value": "#1c1c1e", "$type": "color" },
-      "secondary": { "$value": "#52525b", "$type": "color" },
-      "link":      { "$value": "#e8471a", "$type": "color" }
+      "primary":   { "$value": "#192126",  "$type": "color" },
+      "secondary": { "$value": "#37474F",  "$type": "color" },
+      "link":      { "$value": "#0A8920",  "$type": "color" }
     }
   },
 
   "font": {
     "family": {
-      "sans": { "$value": "'DM Sans', system-ui, -apple-system, sans-serif", "$type": "fontFamily" }
+      "sans": { "$value": "'Plus Jakarta Sans', system-ui, -apple-system, sans-serif", "$type": "fontFamily" }
     }
   },
 
   "component": {
     "button": {
-      "border-radius": { "$value": "24px", "$type": "dimension", "$description": "Pill-shaped CTAs for mobile-first feel" }
+      "border-radius": { "$value": "6px", "$type": "dimension", "$description": "Same as spec: border-radius 6px" },
+      "padding-x":     { "$value": "16px", "$type": "dimension", "$description": "Spec: 16px horizontal padding" },
+      "padding-y":     { "$value": "8px",  "$type": "dimension", "$description": "Spec: 8px vertical padding" }
     },
     "card": {
-      "border-radius": { "$value": "16px", "$type": "dimension" }
+      "border-radius": { "$value": "10px", "$type": "dimension" }
     }
   },
 

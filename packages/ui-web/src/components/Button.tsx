@@ -1,7 +1,7 @@
 import React, { forwardRef, type ButtonHTMLAttributes, type ReactNode } from 'react';
 import { useTheme } from '../theme/ThemeContext';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'danger';
+export type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'danger' | 'especial';
 export type ButtonSize = 'sm' | 'md' | 'lg';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -65,6 +65,12 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             color: isDisabled ? tokens.colorTextDisabled : '#ffffff',
             border: 'none',
           };
+        case 'especial':
+          return {
+            background: isDisabled ? tokens.colorBorderDefault : '#333333',
+            color: isDisabled ? tokens.colorTextDisabled : '#ffffff',
+            border: 'none',
+          };
       }
     })();
 
@@ -95,14 +101,16 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         onMouseOver={(e) => {
           if (isDisabled || variant === 'ghost') return;
           const el = e.currentTarget;
-          if (variant === 'primary') el.style.background = tokens.colorBrandPrimaryHover;
+          if (variant === 'primary')   el.style.background = tokens.colorBrandPrimaryHover;
           if (variant === 'secondary') el.style.background = tokens.colorBrandSecondaryHover;
+          if (variant === 'especial')  el.style.background = '#1a1a1a';
         }}
         onMouseOut={(e) => {
           if (isDisabled || variant === 'ghost') return;
           const el = e.currentTarget;
-          if (variant === 'primary') el.style.background = tokens.colorBrandPrimary;
+          if (variant === 'primary')   el.style.background = tokens.colorBrandPrimary;
           if (variant === 'secondary') el.style.background = tokens.colorBrandSecondary;
+          if (variant === 'especial')  el.style.background = '#333333';
         }}
         onFocus={(e) => {
           e.currentTarget.style.boxShadow = `0 0 0 3px ${tokens.colorBrandPrimarySubtle}`;

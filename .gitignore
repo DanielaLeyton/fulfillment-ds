@@ -1,0 +1,17 @@
+# Claude Code local config (contains machine-specific paths)
+.claude/launch.json
+
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+storybook-static/
+
+# macOS
+.DS_Store
+
+# Env files
+.env
+.env.local

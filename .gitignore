@@ -12,6 +12,7 @@ storybook-static/
 # macOS
 .DS_Store
 
-# Env files
+# Env files (contienen IDs/secrets — no commitear)
 .env
 .env.local
+.env.production

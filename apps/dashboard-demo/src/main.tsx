@@ -5,7 +5,7 @@ import formbricks from '@formbricks/js';
 import { App } from './App';
 
 formbricks.setup({
-  environmentId: 'cmpcvgl065sd6wo01fka92ucr', // reemplazar con el ID de tu proyecto en app.formbricks.com
+  environmentId: import.meta.env.VITE_FORMBRICKS_ENV_ID,
   appUrl: 'https://app.formbricks.com',
 });
 

@@ -1,6 +1,6 @@
-name: fulfillment_design_system
-description: Fulfillment Design System — Flutter component library with multi-brand theming.
-version: 1.0.0
+name: flutter_demo
+description: Fulfillment Design System — Flutter demo (Brand A + Brand B mockups)
+version: 1.0.0+1
 
 environment:
   sdk: ">=3.3.0 <4.0.0"
@@ -10,6 +10,8 @@ dependencies:
   flutter:
     sdk: flutter
   google_fonts: ^6.2.1
+  fulfillment_design_system:
+    path: ../../packages/ui-flutter
 
 dev_dependencies:
   flutter_test:

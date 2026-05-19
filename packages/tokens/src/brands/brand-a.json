@@ -4,10 +4,10 @@
 
   "color": {
     "brand": {
-      "primary":         { "$value": "#0a6eff", "$type": "color", "$description": "Electric blue — action, CTAs" },
-      "primary-hover":   { "$value": "#0056d4", "$type": "color" },
-      "primary-pressed": { "$value": "#0042a4", "$type": "color" },
-      "primary-subtle":  { "$value": "#e7f0ff", "$type": "color" },
+      "primary":         { "$value": "#006DFF", "$type": "color", "$description": "Brand A primary blue — action, CTAs" },
+      "primary-hover":   { "$value": "#065BDC", "$type": "color" },
+      "primary-pressed": { "$value": "#0C49B9", "$type": "color" },
+      "primary-subtle":  { "$value": "#E8F0FF", "$type": "color" },
       "on-primary":      { "$value": "#ffffff", "$type": "color" },
 
       "secondary":        { "$value": "#1a2540", "$type": "color", "$description": "Navy — sidebar, headers" },

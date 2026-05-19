@@ -38,6 +38,17 @@
         "800": { "$value": "#01258B",  "$type": "color" },
         "900": { "$value": "#011469",  "$type": "color" }
       },
+      "brand-a-primary": {
+        "100": { "$value": "#E8F0FF",  "$type": "color" },
+        "200": { "$value": "#AECCFF",  "$type": "color" },
+        "300": { "$value": "#74AAFF",  "$type": "color" },
+        "400": { "$value": "#3A8BFF",  "$type": "color" },
+        "500": { "$value": "#006DFF",  "$type": "color" },
+        "600": { "$value": "#065BDC",  "$type": "color" },
+        "700": { "$value": "#0C49B9",  "$type": "color" },
+        "800": { "$value": "#0F3893",  "$type": "color" },
+        "900": { "$value": "#0E2B69",  "$type": "color" }
+      },
       "success": {
         "100": { "$value": "#E8F6EE",  "$type": "color" },
         "200": { "$value": "#AEDDC3",  "$type": "color" },

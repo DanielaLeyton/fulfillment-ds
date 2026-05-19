@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fulfillment_design_system/fulfillment_design_system.dart';
-import '../screens/warehouse/warehouse_home.dart';
-import '../screens/warehouse/tasks_screen.dart';
-import '../screens/warehouse/scan_screen.dart';
+import '../screens/warehouse/shipping_home.dart';
+import '../screens/warehouse/conductores_screen.dart';
+import '../screens/warehouse/rutas_screen.dart';
 import '../screens/warehouse/profile_screen.dart';
 
 class WarehouseApp extends StatelessWidget {
@@ -12,7 +12,7 @@ class WarehouseApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'FDS Warehouse',
+      title: 'Shipping',
       theme: FdsTheme.brandA,
       debugShowCheckedModeBanner: false,
       home: WarehouseShell(onSwitchBrand: onSwitchBrand),
@@ -33,11 +33,10 @@ class _WarehouseShellState extends State<WarehouseShell> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final screens = [
-      const WarehouseHomeScreen(),
-      const TasksScreen(),
-      const ScanScreen(),
+      const ShippingHomeScreen(),
+      const RutasScreen(),
+      const ConductoresScreen(),
       ProfileScreen(onSwitchBrand: widget.onSwitchBrand),
     ];
 
@@ -48,8 +47,8 @@ class _WarehouseShellState extends State<WarehouseShell> {
         onTap: (i) => setState(() => _tab = i),
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.dashboard_outlined), activeIcon: Icon(Icons.dashboard), label: 'Dashboard'),
-          BottomNavigationBarItem(icon: Icon(Icons.checklist_outlined), activeIcon: Icon(Icons.checklist), label: 'Tareas'),
-          BottomNavigationBarItem(icon: Icon(Icons.qr_code_scanner_outlined), activeIcon: Icon(Icons.qr_code_scanner), label: 'Escanear'),
+          BottomNavigationBarItem(icon: Icon(Icons.route_outlined), activeIcon: Icon(Icons.route), label: 'Rutas'),
+          BottomNavigationBarItem(icon: Icon(Icons.people_outline), activeIcon: Icon(Icons.people), label: 'Conductores'),
           BottomNavigationBarItem(icon: Icon(Icons.person_outline), activeIcon: Icon(Icons.person), label: 'Perfil'),
         ],
       ),

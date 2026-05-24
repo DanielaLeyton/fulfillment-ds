@@ -11,6 +11,7 @@ dependencies:
     sdk: flutter
   google_fonts: ^6.2.1
   formbricks_flutter: ^0.0.7
+  posthog_flutter: ^4.0.1
   fulfillment_design_system:
     path: ../../packages/ui-flutter
 

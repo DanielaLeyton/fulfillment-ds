@@ -1,9 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:formbricks_flutter/formbricks_flutter.dart';
+import 'package:posthog_flutter/posthog_flutter.dart';
 import 'apps/warehouse_app.dart';
 import 'apps/delivery_app.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // PostHog — Analytics, Session Recording, Feature Flags
+  final posthogConfig = PostHogConfig(
+    const String.fromEnvironment(
+      'POSTHOG_KEY',
+      defaultValue: 'phc_ndLrBGJnwhiYqdUvnSJkzvvmoPRoy22xqJCQH4pfVBt4',
+    ),
+  )
+    ..host = 'https://us.i.posthog.com'
+    ..captureApplicationLifecycleEvents = true
+    ..debug = false;
+  await Posthog().setup(posthogConfig);
+
   runApp(
     FormbricksProvider(
       client: FormbricksClient(

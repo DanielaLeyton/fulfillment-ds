@@ -11,7 +11,7 @@ void main() async {
   final posthogConfig = PostHogConfig(
     const String.fromEnvironment(
       'POSTHOG_KEY',
-      defaultValue: 'phc_ndLrBGJnwhiYqdUvnSJkzvvmoPRoy22xqJCQH4pfVBt4',
+      defaultValue: 'phc_oxBkB8767YUgLD8qwab5mHetJDJMW6SKZ72BhcGyxgiQ',
     ),
   )
     ..host = 'https://us.i.posthog.com'

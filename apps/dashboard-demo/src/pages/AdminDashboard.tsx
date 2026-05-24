@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { usePostHog, useFeatureFlagEnabled } from 'posthog-js/react';
 import {
   useTheme,
   Button,
@@ -139,6 +140,16 @@ function BrandAHeader({ tokens }: { tokens: any }) {
             cursor: 'pointer',
           }}>{chip}</span>
         ))}
+        {/* Heatmap toolbar button */}
+        <button
+          title="Activar PostHog Toolbar (Heatmaps)"
+          onClick={() => (window as any).posthog?.loadToolbar?.()}
+          style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '6px', color: '#f54e00', display: 'flex' }}
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12h8M12 8v8"/>
+          </svg>
+        </button>
         <button style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '6px', color: tokens.colorTextSecondary, display: 'flex' }}>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
@@ -165,6 +176,10 @@ function BrandAHeader({ tokens }: { tokens: any }) {
 
 // ── Transporte content ──────────────────────────────────────────────────────
 function TransporteContent({ tokens }: { tokens: any }) {
+  const posthog = usePostHog();
+  // Feature Flag: "nueva-vista-conductores" — actívalo en PostHog para mostrar KPI panel
+  const showKpiPanel = useFeatureFlagEnabled('nueva-vista-conductores');
+
   const [search, setSearch] = useState('');
   const [activeTab, setActiveTab] = useState('Conductores');
   const [selected, setSelected] = useState<Driver | null>(null);
@@ -176,6 +191,14 @@ function TransporteContent({ tokens }: { tokens: any }) {
     d.name.toLowerCase().includes(search.toLowerCase()) ||
     d.plate.toLowerCase().includes(search.toLowerCase())
   );
+
+  // KPI counts para el panel del feature flag
+  const kpis = {
+    total: TOTAL_DRIVERS,
+    enRuta: drivers.filter(d => d.status === 'En ruta').length,
+    disponibles: drivers.filter(d => d.status === 'Disponible').length,
+    noDisponibles: drivers.filter(d => d.status === 'No disponible').length,
+  };
 
   const tabs = [
     { label: 'Rutas', count: null },
@@ -194,7 +217,10 @@ function TransporteContent({ tokens }: { tokens: any }) {
           {tabs.map((tab) => (
             <button
               key={tab.label}
-              onClick={() => setActiveTab(tab.label)}
+              onClick={() => {
+                setActiveTab(tab.label);
+                posthog.capture('tab_changed', { tab: tab.label });
+              }}
               style={{
                 display: 'flex', alignItems: 'center', gap: '8px',
                 padding: '10px 16px',
@@ -222,13 +248,44 @@ function TransporteContent({ tokens }: { tokens: any }) {
         </div>
       </div>
 
+      {/* Feature Flag: nueva-vista-conductores — KPI panel */}
+      {showKpiPanel && (
+        <div style={{ padding: '12px 28px 0', display: 'flex', gap: '12px' }}>
+          {[
+            { label: 'Total conductores', value: kpis.total.toLocaleString(), color: tokens.colorBrandPrimary, bg: tokens.colorBrandPrimarySubtle },
+            { label: 'En ruta',           value: String(kpis.enRuta),         color: tokens.colorBrandPrimary, bg: tokens.colorBrandPrimarySubtle },
+            { label: 'Disponibles',       value: String(kpis.disponibles),    color: '#047E48',                bg: '#E8F6EE' },
+            { label: 'No disponibles',    value: String(kpis.noDisponibles),  color: '#D72A22',                bg: '#FFF2F2' },
+          ].map(({ label, value, color, bg }) => (
+            <div key={label} style={{
+              flex: 1, padding: '14px 18px', borderRadius: '10px',
+              background: bg, border: `1px solid ${color}22`,
+              display: 'flex', flexDirection: 'column', gap: '4px',
+            }}>
+              <span style={{ fontSize: '22px', fontWeight: 800, color }}>{value}</span>
+              <span style={{ fontSize: '12px', color, opacity: 0.75 }}>{label}</span>
+            </div>
+          ))}
+          <div style={{
+            display: 'flex', alignItems: 'center', padding: '0 12px',
+            background: '#FFF7ED', borderRadius: '10px', border: '1px solid #FED7AA',
+            gap: '6px', fontSize: '12px', color: '#C2410C', fontWeight: 500,
+          }}>
+            🚀 <span>Feature Flag: <b>nueva-vista-conductores</b></span>
+          </div>
+        </div>
+      )}
+
       {/* Toolbar */}
       <div style={{ padding: '16px 28px', display: 'flex', alignItems: 'center', gap: '10px' }}>
         <div style={{ width: '280px' }}>
           <Input
             placeholder="Buscar por nombre o placa"
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(e) => {
+              setSearch(e.target.value);
+              if (e.target.value.length > 2) posthog.capture('search_used', { query: e.target.value });
+            }}
             leftAddon={<SearchIcon color={tokens.colorTextTertiary} />}
           />
         </div>
@@ -297,7 +354,10 @@ function TransporteContent({ tokens }: { tokens: any }) {
                   borderBottom: `1px solid ${tokens.colorBorderDefault}`,
                   cursor: 'pointer',
                 }}
-                onClick={() => setSelected(driver)}
+                onClick={() => {
+                  setSelected(driver);
+                  posthog.capture('driver_clicked', { driver_id: driver.id, driver_name: driver.name, status: driver.status });
+                }}
               >
                 <td style={{ padding: '13px 14px', fontWeight: 500, color: tokens.colorTextPrimary }}>{driver.name}</td>
                 <td style={{ padding: '13px 14px', color: tokens.colorTextSecondary }}>{driver.email}</td>
@@ -317,7 +377,10 @@ function TransporteContent({ tokens }: { tokens: any }) {
                     </button>
                     <Toggle
                       enabled={driver.enabled}
-                      onChange={(v) => setDrivers((prev) => prev.map((d) => d.id === driver.id ? { ...d, enabled: v } : d))}
+                      onChange={(v) => {
+                        setDrivers((prev) => prev.map((d) => d.id === driver.id ? { ...d, enabled: v } : d));
+                        posthog.capture('driver_toggled', { driver_id: driver.id, driver_name: driver.name, enabled: v });
+                      }}
                       color={tokens.colorBrandPrimary}
                     />
                   </div>
